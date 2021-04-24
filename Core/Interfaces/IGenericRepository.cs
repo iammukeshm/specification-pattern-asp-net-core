@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using Core.Specification;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace Core.Interfaces
@@ -7,5 +8,6 @@ namespace Core.Interfaces
     {
         Task<T> GetByIdAsync(int id);
         Task<List<T>> GetAllAsync();
+        IEnumerable<T> Find(ISpecification<T> specification = null);
     }
 }
