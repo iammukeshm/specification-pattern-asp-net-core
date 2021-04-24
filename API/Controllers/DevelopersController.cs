@@ -35,7 +35,8 @@ namespace API.Controllers
         [HttpGet("find")]
         public async Task<IActionResult> Find()
         {
-            var specification = new DeveloperByIncomeSpecification();
+            var specification = new DeveloperWithAddressSpecification();
+            //var specification = new DeveloperByIncomeSpecification();
             var developers = _repository.Find(specification);
             return Ok(developers);
         }
